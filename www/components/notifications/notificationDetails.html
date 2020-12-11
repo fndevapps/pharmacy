@@ -1,0 +1,50 @@
+<div data-role="view" id="notificationDetailsView" data-controller="notificationDetailsView" data-init="notificationDetailsView.onInit"
+    data-show="notificationDetailsView.onShow" data-hide="notificationDetailsView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="notificationDetailsView.back(event)"></a>
+            </div>
+            <span class="title">
+                <translation value="orders.orderDetails"></translation>
+            </span>
+            <div class="buttonContainer">
+                
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="item-container">
+                <div class="item-image-container" onclick="notificationDetailsView.viewImage(event)">
+                    <div class="item-image"></div>
+                </div>
+                <div class="item-info-container">
+                    <div class="item-name-container">
+                        <div class="item-name"></div>
+                    </div>
+                    <div class="item-date-container">
+                        <span class="item-date"></span>
+                    </div>
+                </div>
+                <div class="item-description-container" data-role="scroller">
+                    <div class="item-description">
+                       
+                    </div>
+                </div>
+            </div>
+            <div class="list-container" data-role="scroller">
+                <ul id="notificationAttachmentsList"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/x-kendo-template" id="notificationAttachmentsListTemplate">
+    <div class="list-item" onclick="notificationDetailsView.viewNotificationAttachment(event, '#=uid#')">
+        <div class="order-info-main">
+            <div class="order-code"><b>#= currentLanguage == 'ar' ? aName : eName #</b></div>
+        </div>
+    </div>
+</script>

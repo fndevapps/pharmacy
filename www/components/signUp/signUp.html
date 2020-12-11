@@ -1,0 +1,160 @@
+<div data-role="view" id="signUpView" data-controller="signUpView" data-init="signUpView.onInit"
+    data-show="signUpView.onShow" data-before-hide="signUpView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="signUpView.back(event)"></a>
+            </div>
+            <span class="title txt-center">
+                <translation value="menu.signUp"></translation>
+            </span>
+            <div class="buttonContainer">
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="signUp-form">
+                <div class="form">
+                    <div class="form-group m-t-10">
+                        <div class="sub-title">
+                            <span>
+                                <translation value="signUp.fillFields"></translation>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="form-group p-r-s">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.aName"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="aName" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.eName"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="eName" value="" />
+                   </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.email"></translation>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control input" id="email" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.confirmEmail"></translation>
+                            </span>
+                        </div>
+                        <input type="email" class="form-control input" id="confirmEmail" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.username"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="username" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.password"></translation>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control input" id="password" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.confrimPassword"></translation>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control input" id="confirmPassword" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.mobile"></translation>
+                            </span>
+                        </div>
+                        <input type="tel" class="form-control input" id="mobile" value="" placeholder="" oninput="signUpView.onMobileChanged(event)" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.country"></translation>
+                            </span>
+                        </div>
+                       <!-- <input type="text" class="form-control input" id="country" value="" />-->
+                       <select class="form-control input" id="selCountryId" onChange="signUpView.onCountryChanged(event)"></select>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.city"></translation>
+                            </span>
+                        </div>
+                        <select class="form-control input" id="selCityId" onChange="signUpView.onCityChanged(event)" ></select>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.area"></translation>
+                            </span>
+                        </div>
+                        <select class="form-control input" id="selAreaId" ></select>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.neighborhood"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="neighborhood" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.street"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="street" value="" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.address"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="address" value=""/>
+                    </div>
+                   <!-- <div class="form-group">
+                        <div class="control-label signUpTitle">
+                            <span>
+                                <translation value="signUp.location"></translation>
+                            </span>
+                        </div>
+                        <div id="map" class="form-control"></div>
+                    </div>-->
+                    <div class="form-group">
+                        <div class="btn" id="btnSignUp" onclick="signUpView.signUp(event)">
+                            <div class="btnText flex center">
+                                <span>
+                                    <translation value="signUp.signUpMe"></translation>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

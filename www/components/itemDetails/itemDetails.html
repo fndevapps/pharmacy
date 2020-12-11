@@ -1,0 +1,47 @@
+<div data-role="view" id="itemDetailsView" data-controller="itemDetailsView" data-init="itemDetailsView.onInit"
+    data-show="itemDetailsView.onShow" data-hide="itemDetailsView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="itemDetailsView.back(event)"></a>
+            </div>
+            <span class="title">
+
+            </span>
+            <div class="buttonContainer">
+                <!-- <a data-role="button" class="cartButton" onclick="itemDetailsView.viewCart(event)">
+                    <span class="cartCount"></span>
+                </a> -->
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="item-container">
+                <div class="item-image-container" onclick="itemDetailsView.viewImage(event)">
+                    <div class="item-image"></div>
+                </div>
+                <div class="item-info-container">
+                    <div class="item-name-container">
+                        <div class="item-name"></div>
+                    </div>
+                    <div class="item-price-container">
+                        <span class="item-price"></span>
+                    </div>
+                </div>
+                <div class="item-description-container" data-role="scroller">
+                    <div class="item-description-padding"></div>
+                    <div class="item-description fab-list">
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a class="btn fab cartButton" onclick="homeView.viewCart(event)">
+            <span class="cartCount"></span>
+        </a>
+    </div>
+    <div class="footer action" onclick="itemDetailsView.addOrRemoveItemFromCart(event)">
+        <translation value="cart.addToCart"></translation>
+    </div>
+</div>

@@ -1,0 +1,145 @@
+<div data-role="view" id="profileView" data-controller="profileView" data-init="profileView.onInit"
+    data-show="profileView.onShow" data-before-hide="profileView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation drawerButton" onclick="toggleMenu(event)"></a>
+            </div>
+            <span class="title">
+                <translation value="menu.profile"></translation>
+            </span>
+            <div class="buttonContainer">
+
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="section" id="section-personal-info">
+                <div class="row">
+                    <div class="title main">
+                        <translation value="profile.personalInfo"></translation>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form">
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="general.aname"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtAName" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="general.ename"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtEName" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="signUp.mobile"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtMobileNumber" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="signUp.balance"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtBalance" readonly />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section-personal-info">
+                <div class="row">
+                    <div class="title main">
+                        <translation value="profile.addresses"></translation>
+                    </div>
+                    <div class="trailing">
+                        <div class="action" onclick="profileView.addLocation(event)">
+                            <!-- <translation value="general.add"></translation> -->
+                            <button class="btn btn-primary add"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <ul data-role="listview" id="addressesList" data-source="profileView.addressesDS" data-template="addressesTemplate" data-auto-bind="false"></ul>
+                </div>
+            </div>
+            <div class="login-form">
+                <div class="form">
+                    <div class="form-group">
+                        <div class="btn" id="btnSaveProfile" onclick="profileView.updateProfile(event)">
+                            <div class="btnText flex center">
+                                <translation value="general.save"></translation>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="login-form">
+                <div class="form">
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="signUp.firstName"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtFirstName" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="signUp.surname"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtLastName" />
+                    </div>
+                    <div class="form-group">
+                        <div class="btn" id="btnAddLocation" onclick="profileView.addLocation(event)">
+                            <div class="btnText flex center">
+                                <translation value="address.addNew"></translation>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="btn" id="btnSaveProfile" onclick="profileView.updateProfile(event)">
+                            <div class="btnText flex center">
+                                <translation value="general.save"></translation>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+<script id="addressesTemplate" type="text/x-kendo-template">
+    <div class="list-item-container">
+        # if(_noDataFound) { #
+            <div class="title text-center">
+                <b>#=TranslationManager.translate(name)#</b>
+            </div>
+        # } else { #
+            <div class="action-start" onclick="profileView.setDefaultLocation(event, '#=uid#')">
+                <div class="checkbox #= isDefault == 1 ? 'checked' : '' #"></div>
+            </div>
+            <div class="title">
+                <b>#=name#</b>
+                <br/>
+                #=area.name#, Building #=buildingNumber#, Apartment #=apartmentNumber#, Floor #=floor#
+            </div>
+            <div class="action-end" onclick="profileView.editLocation(event, '#=uid#')">
+                <div class="edit"></div>
+            </div>
+        # } #
+    </div>
+</script>

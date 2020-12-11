@@ -1,0 +1,34 @@
+{
+    "android": {
+      "release": {
+        "keystore": "",
+        "storePassword": "",
+        "alias": "",
+        "password": "",
+        "keystoreType": ""
+      }
+    },
+    "ios": {
+      "debug": {
+        "codeSignIdentitiy": "iPhone Distribution",
+        "developmentTeam": "R28XTWCC85",
+        "provisioningProfile": "Inhouse",
+        "packageType": "enterprise",
+        "automaticProvisioning": false,
+        "buildFlag": [
+          "-UseModernBuildSystem=0"
+        ]
+      },
+      "release": {
+        "codeSignIdentitiy": "iPhone Distribution",
+        "developmentTeam": "R28XTWCC85",
+        "provisioningProfile": "eCommerce_Inhouse",
+        "packageType": "enterprise",
+        "automaticProvisioning": false,
+        "buildFlag": [
+          "-UseModernBuildSystem=0"
+        ]
+      }
+    }
+  }
+  

@@ -1,0 +1,173 @@
+<div data-role="view" id="checkoutView" data-controller="checkoutView" data-init="checkoutView.onInit"
+    data-show="checkoutView.onShow" data-hide="checkoutView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="checkoutView.back(event)"></a>
+            </div>
+            <span class="title">
+                <translation value="menu.checkout"></translation>
+            </span>
+            <div class="buttonContainer">
+                <a data-role="button" class="cartButton">
+                    <span class="cartCount"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="section" id="section-address">
+                <div class="row">
+                    <div class="title main"><translation value="checkout.deliveryAddress"></translation></div>
+                </div>
+                <div class="row addressDetails">
+                    <div class="title"></div>
+                    <div class="trailing">
+                        <div class="action" onclick="checkoutView.selectAddress(event)">
+                            <!-- <translation value="general.change"></translation> -->
+                            <button class="btn btn-primary change"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row noAddress hide">
+                    <div class="title"><translation value="general.noDataFound"></translation></div>
+                    <div class="trailing">
+                        <div class="action" onclick="checkoutView.addAddress(event)">
+                            <!-- <translation value="general.add"></translation> -->
+                            <button class="btn btn-primary add"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section" id="section-payment-method" style="display: none;">
+                <div class="row">
+                    <div class="title main"><translation value="checkout.paymentMethod"></translation></div>
+                    <!-- <div class="trailing">
+                        <div class="action">ADD</div>
+                    </div> -->
+                </div>
+                <div class="paymentMethodsList">
+                    <!-- <div class="row">
+                        <div class="title">Cash on delivery</div>
+                    </div>
+                    <div class="row">
+                        <div class="title bold">Visa on delivery</div>
+                    </div>
+                    <div class="row">
+                        <div class="title">**** **** **** 1234</div>
+                    </div> -->
+                </div>
+            </div>
+           <!-- <div class="section" id="section-promo-code">
+                <div class="row flex">
+                    <div class="title main"><translation value="checkout.promoCode"></translation></div>
+                    <div class="trailing" style="width:40%">
+                        <div class="action">free15</div>
+                        <div class="form-group">
+                            <input type="text" id="txtPromoCode" class="form-control" />
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+            <div class="section" id="section-promotions">
+                <div class="row">
+                    <div class="title main"><translation value="checkout.appliedPromotions"></translation></div>
+                </div>
+                <div class="row-list"></div>
+            </div>
+            <div class="section" id="section-summary">
+                <div class="row">
+                    <div class="title main"><translation value="checkout.summary"></translation></div>
+                </div>
+                <div class="row total-detail subtotal">
+                    <div class="title">
+                        <translation value="cart.subtotal"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value">0.00</span>
+                    </div>
+                </div>
+                <div class="row total-detail discount">
+                    <div class="title">
+                        <translation value="cart.discount"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value">0.00</span>
+                    </div>
+                </div>
+                <div class="row total-detail tax">
+                    <div class="title">
+                        <translation value="cart.tax"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value">0.00</span>
+                    </div>
+                </div>
+                <div class="row total-detail delivery">
+                    <div class="title">
+                        <translation value="cart.delivery"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value">0.00</span>
+                    </div>
+                </div>
+                <hr class="small" />
+                <div class="row total-detail total">
+                    <div class="title main">
+                        <translation value="cart.total"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value">0</span>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="totals">
+                <table class="cart-totals">
+                    <tr>
+                        <td class="total-title">
+                            <translation value="cart.total"></translation>
+                        </td>
+                        <td class="total-detail"><span class="value">0.00</span>
+                            <translation value="currency.jd"></translation>
+                        </td>
+                    </tr>
+                </table>
+            </div> -->
+        </div>
+    </div>
+    <!-- <div class="footer address">
+        <table class="cart-address">
+            <tr>
+                <td class="address-title">
+                    <translation value="cart.address"></translation>
+                </td>
+                <td class="address-detail">
+                    <div class="form">
+                        <div class="form-group">
+                            <select id="selAddressID" class="form-control"></select>
+                            <div id="btnAddAddress" class="btn btn-block hide" onclick="checkoutView.addAddress(event)">
+                                <div class="btnText flex center">
+                                    <translation value="address.addNew"></translation>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div> -->
+    <div class="footer action disabled" onclick="checkoutView.placeOrder(event)">
+        <translation value="cart.placeOrder"></translation>
+    </div>
+</div>
+<script id="promotionItemTemplate" type="text/x-kendo-template">
+    <div class="row total-detail subtotal">
+        <div class="title">
+            #= currentLanguage == 'ar' ? aName : name #
+        </div>
+        <div class="trailing bold">
+            <span class="value">#= totalString #</span>
+        </div>
+    </div>
+</script>

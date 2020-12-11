@@ -1,0 +1,49 @@
+<!-- <div data-role="view" id="notificationsView" data-controller="notificationsView" data-layout="tabsLayout" data-init="notificationsView.onInit" -->
+    <div data-role="view" id="notificationsView" data-controller="notificationsView" data-init="notificationsView.onInit"
+    data-show="notificationsView.onShow" data-hide="notificationsView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+				<a data-role="button" class="btnNavigation drawerButton" onclick="toggleMenu(event)"></a>
+			</div>
+            <span class="title"><translation value="menu.notifications"></translation></span>
+            <!-- <div class="buttonContainer">
+				<a data-role="button" class="btnNavigation searchButton" onclick="notificationsView.search.showSearch(event)"></a>
+			</div> -->
+            <div class="buttonContainer">
+                <!-- <a data-role="button" class="cartButton" onclick="notificationsView.viewCart(event)">
+                    <span class="cartCount"></span>
+                </a> -->
+            </div>
+        </div>
+        <!-- <div class="navbar search-header" style="display: none">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation closeButton" onclick="notificationsView.search.hideSearch(event)"></a>
+            </div>
+            <span class="title">
+                <div class="search-header">
+                    <div class="search-bar">
+                        <div class="search-icon"></div>
+                        <input type="text" class="search-input" placeholder="Search" onkeyup="notificationsView.search.onSearch(event)" />
+                        <div class="cancel-icon" onclick="notificationsView.search.cancelSearch(event)"></div>
+                    </div>
+                </div>
+            </span>
+        </div> -->
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="list-container" data-role="scroller">
+                <ul id="notificationsList"></ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-kendo-template" id="notificationsListTemplate">
+    <div class="list-item" onclick="notificationsView.viewNotificationDetails(event, '#=uid#')">
+        <div class="order-info-main">
+            <div class="order-code"><b>#= currentLanguage == 'ar' ? aTitle : eTitle #</b></div>
+            <div class="order-date">#= dateString #</div>
+        </div>
+    </div>
+</script>

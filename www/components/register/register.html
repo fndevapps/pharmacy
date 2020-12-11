@@ -1,0 +1,112 @@
+<div data-role="view" id="registerView" data-controller="registerView" data-init="registerView.onInit"
+    data-show="registerView.onShow" data-before-hide="registerView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="registerView.back(event)"></a>
+
+            </div>
+            <span class="title"><translation value="register.register"></translation></span>
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation" ></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="login-form">
+                <div class="form form-profile">
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.FirstName"></translation>
+                                <span class="required">*</span>
+
+                            </span>
+                        </div>
+                        <input class="form-control input" id="textFirstname" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.LastName"></translation>
+                                <span class="required">*</span>
+                            </span>
+                        </div>
+                        <input class="form-control input" id="textLastname" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.Email"></translation>
+                                <span class="required">*</span>
+
+                            </span>
+                        </div>
+                        <input class="form-control input" id="email" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.Confirmemail"></translation>
+                                <span class="required">*</span>
+                            </span>
+                        </div>
+                        <input class="form-control input" id="conEmail" type="email" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.number"></translation>
+                                <span class="required">*</span>
+
+                            </span>
+                        </div>
+                        <input class="form-control input" id="phonenumber" type="number" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.PIN"></translation>
+                                <span class="required">*</span>
+
+                            </span>
+                        </div>
+                        <input class="form-control input" id="pincode" type="password" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex ">
+                            <span>
+                                <translation value="register.ConfirmPin"></translation>
+                                <span class="required">*</span>
+                            </span>
+                        </div>
+                        <input class="form-control input" id="confirmPinCode" type="password" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle flex">
+                            <span>
+                                <translation value="register.Gender"></translation>
+                            </span>
+                        </div>
+                        <select class="form-control input" id="Gender">
+                            <option value=""></option>
+                            <option value="register.Male"></option>
+                            </translation>
+                            <option value="register.Female"></option>
+                            </translation>
+                        </select>
+                        <div class="form-group">
+                            <div class="btn" id="regsiterbtn" onclick="registerView.Submit(event)">
+                                <div class="btnText flex center" ><span>
+                                        <translation value="register.Submit"></translation>
+                                    </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

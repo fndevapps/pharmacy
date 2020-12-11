@@ -1,0 +1,80 @@
+<div data-role="view" id="cartView" data-controller="cartView" data-init="cartView.onInit" data-show="cartView.onShow"
+    data-hide="cartView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="cartView.back(event)"></a>
+            </div>
+            <span class="title">
+                <translation value="menu.cart"></translation>
+            </span>
+            <div class="buttonContainer">
+                <!-- <a data-role="button" class="cartButton">
+                    <span class="cartCount"></span>
+                </a> -->
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="list-container" data-role="scroller">
+                <div class="cart-header">
+                   <!-- <div class="cart-count-container"><span id="cart-count"></span>&nbsp;<translation value="cart.items"></translation></div>-->
+                    <div class="clear-cart" onclick="cartView.clearCart(event)"><translation value="cart.clearAll"></translation></div>
+                </div>
+                <ul id="itemsList"></ul>
+                <div class="totals">
+                    <table class="cart-totals">
+                        <tr>
+                            <td class="total-title subtotal"><translation value="cart.subtotal"></translation></td>
+                            <td class="total-detail subtotal"><span class="value">0.00</span></td>
+                        </tr>
+                        <tr>
+                            <td class="total-title delivery"><translation value="cart.delivery"></translation></td>
+                            <td class="total-detail delivery"><span class="value">0.00</span> </td>
+                        </tr>
+                        <!-- <tr>
+                            <td class="total-title discount"><translation value="cart.discount"></translation></td>
+                            <td class="total-detail discount"><span class="value">0.00</span> <translation value="currency.jd"></translation></td>
+                        </tr>
+                        <tr>
+                            <td class="total-title tax"><translation value="cart.tax"></translation></td>
+                            <td class="total-detail tax"><span class="value">0.00</span> <translation value="currency.jd"></translation></td>
+                        </tr> 
+                        <tr class="separator"><td colspan="2"></td></tr>-->
+                        <!-- <tr>
+                            <td class="total-title total">
+                                <translation value="cart.total"></translation>
+                            </td>
+                            <td class="total-detail total"><span class="value">0.00</span>
+                                <translation value="currency.jd"></translation>
+                            </td>
+                        </tr> -->
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer action" onclick="cartView.checkout(event)">
+        <translation value="cart.checkout"></translation>
+    </div>
+</div>
+<script type="text/x-kendo-template" id="cartItemsListTemplate">
+    <div class="list-item">
+        <div class="item-image" background-image="#=image#"></div>
+        <div class="item-details">
+            <div class="item-name">#=currentLanguage == 'ar' ? aName : name#</div>
+            <div class="item-price">#=price# #=currency.aName# </div>
+        </div>
+        <div class="item-count">
+            <div class="item-count-down" onclick="cartView.decreaseQty(event)"></div>
+            <div class="item-count-qty">#=qty#</div>
+            <div class="item-count-up" onclick="cartView.increaseQty(event)"></div>
+        </div>
+    </div>
+    <div class="list-item-actions">
+        <div class="item-actions">
+            <div class="remove-from-cart-button" onclick="cartView.removeFromCart(event)">#=TranslationManager.translate('cart.remove')#</div>
+        </div>
+    </div>
+</script>

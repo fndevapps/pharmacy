@@ -1,0 +1,111 @@
+<div data-role="view" id="orderDetailsView" data-controller="orderDetailsView" data-init="orderDetailsView.onInit"
+    data-show="orderDetailsView.onShow" data-hide="orderDetailsView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation backButton" onclick="orderDetailsView.back(event)"></a>
+            </div>
+            <span class="title">
+                <translation value="orders.orderDetails"></translation>
+            </span>
+            <div class="buttonContainer">
+                
+            </div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="section" id="section-info">
+                <div class="row">
+                    <div class="title main"><translation value="orders.orderNo"></translation>&nbsp;<span id="lblOrderNumber"></span></div>
+                </div>
+                <div class="row">
+                    <div class="title">
+                        <div class="order-detail-title"><translation value="orders.orderDate"></translation></div>
+                        <span class="order-detail-value" id="lblOrderDate"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="title">
+                        <div class="order-detail-title"><translation value="orders.orderStatus"></translation></div>
+                        <span class="order-detail-value" id="lblOrderStatus"></span>
+                    </div>
+                </div>
+            </div>
+            <ul id="orderItemsList"></ul>
+            <div class="section" id="section-summary">
+                <div class="row total-detail subtotal">
+                    <div class="title">
+                        <translation value="cart.subtotal"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value"></span>
+                        <sysparam value="Curerncy.jd"></translation>
+                    </div>
+                </div>
+                <div class="row total-detail discount">
+                    <div class="title">
+                        <translation value="cart.discount"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value"></span>
+                    </div>
+                </div>
+                <div class="row total-detail tax">
+                    <div class="title">
+                        <translation value="cart.tax"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value"></span>
+                    </div>
+                </div>
+                <div class="row total-detail delivery">
+                    <div class="title">
+                        <translation value="cart.delivery"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value"></span>
+                    </div>
+                </div>
+                <hr class="small" />
+                <div class="row total-detail total">
+                    <div class="title main">
+                        <translation value="cart.total"></translation>
+                    </div>
+                    <div class="trailing bold">
+                        <span class="value"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/x-kendo-template" id="orderItemsListTemplate">
+    #if(isPromotionItem){#
+        <div class="list-item promotion-item">
+            <div class="item-image" background-image="#=itemImage#"></div>
+            <div class="item-details">
+                <div class="item-name">#=currentLanguage == 'ar' ? itemAName : itemEName#</div>
+                <div class="item-price">#=priceString#</div>
+            </div>
+            <div class="item-count">
+                #if(itemId){#
+                    <div class="item-count-qty">#=qty#</div>
+                #}else{#
+                    <div class="item-count-qty">#=discountRate#%</div>
+                #}#
+            </div>
+        </div>
+    #}else{#
+        <div class="list-item">
+            <div class="item-image" background-image="#=itemImage#"></div>
+            <div class="item-details">
+                <div class="item-name">#=currentLanguage == 'ar' ? itemAName : itemEName#</div>
+                <div class="item-price">#=priceString#</div>
+            </div>
+            <div class="item-count">
+                <div class="item-count-qty">#=qty#</div>
+            </div>
+        </div>
+    #}#
+</script>

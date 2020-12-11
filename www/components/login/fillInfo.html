@@ -1,0 +1,42 @@
+<div data-role="view" id="fillInfoView" data-controller="fillInfoView" data-init="fillInfoView.onInit"
+    data-show="fillInfoView.onShow" data-before-hide="fillInfoView.onHide">
+    <div class="content">
+        <div class="container">
+            <div class="logo">
+                <div class="sublogo"></div>
+            </div>
+            <div class="login-form">
+                <div class="instructions-container">
+                    <div class="avatar"></div>
+                    <div class="title">
+                        <translation value="fillInfo.info"></translation>
+                    </div>
+                    <div class="instructions">
+                        <translation value="fillInfo.fillInfoInstructions"></translation>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="signUp.firstName"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtFirstName" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="signUp.surname"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtLastName" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer action" id="btnLogin" onclick="fillInfoView.updateProfile(event)">
+        <translation value="general.continue"></translation>
+    </div>
+</div>

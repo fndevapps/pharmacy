@@ -1,0 +1,106 @@
+<div data-role="view" id="fillAddressView" data-controller="fillAddressView" data-init="fillAddressView.onInit"
+    data-show="fillAddressView.onShow" data-before-hide="fillAddressView.onHide">
+    <div class="content">
+        <div class="container">
+            <div class="logo">
+                <div class="sublogo"></div>
+            </div>
+            <div class="login-form">
+                <div class="instructions-container">
+                    <div class="avatar"></div>
+                    <div class="title">
+                        <translation value="fillInfo.address"></translation>
+                    </div>
+                    <div class="instructions">
+                        <translation value="fillInfo.fillAddressInstructions"></translation>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.name"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtName" />
+                    </div>
+                    <!-- <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.country"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtCountryName" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.city"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtCityName" />
+                    </div> -->
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.area"></translation>
+                            </span>
+                        </div>
+                        <select class="form-control input" id="selAreaID"></select>
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.road"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtRoadName" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.buildingNumber"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtBuildingNumber" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.apartmentNumber"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtApartmentNumber" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.floor"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtFloor" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.landmark"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtLandmark" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="address.deliveryInstructions"></translation>
+                            </span>
+                        </div>
+                        <input type="text" class="form-control input" id="txtDeliveryInstructions" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer action" id="btnLogin" onclick="fillAddressView.saveAddress(event)">
+        <translation value="general.continue"></translation>
+    </div>
+</div>

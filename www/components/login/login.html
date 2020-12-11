@@ -1,0 +1,54 @@
+<div data-role="view" id="loginView" data-controller="loginView" data-init="loginView.onInit"
+    data-show="loginView.onShow" data-before-hide="loginView.onHide">
+    <div class="content">
+        <div class="container">
+            <div class="logo">
+                <div class="sublogo"></div>
+            </div>
+            <div class="login-form">
+                <div class="instructions-container">
+                    <div class="avatar"></div>
+                    <div class="title"><!--<translation value="login.welcome"></translation>--></div>
+                    <div class="instructions"><!--<translation value="login.loginInstructions"></translation>--></div>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <div class="control-label loginTitle">
+                            <span>
+                                <translation value="login.username"></translation>
+                            </span>
+                        </div>
+                        <input  class="form-control input" id="txtMobile" value="" oninput="loginView.onInputMobile(event)" placeholder="" style="direction: ltr !important;" />
+                    </div>
+                    <div class="form-group">
+                        <div class="control-label loginTitle">
+                            <span>
+                                <translation value="login.password"></translation>
+                            </span>
+                        </div>
+                        <input type="password" class="form-control input" id="txtPassword" value="" oninput="loginView.onInputPassword(event)"  style="direction: ltr !important;"  />
+                    </div>
+                    <div class="form-group">
+                        <div class="btn" id="btnLogin" onclick="loginView.login(event)">
+                            <div class="btnText flex center"><span>
+                                    <translation value="login.login"></translation>
+                                </span></div>
+                           <!-- <div class="btnIcon"></div>-->
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="btn" id="btnSignUp" onclick="loginView.signUp(event)">
+                            <div class="btnText flex center"><span>
+                                    <translation value="login.signUp"></translation>
+                                </span></div>
+                           <!-- <div class="btnIcon"></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="footer action" id="btnLogin" onclick="loginView.login(event)">
+        <translation value="general.continue"></translation>
+    </div> -->
+</div>

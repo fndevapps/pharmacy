@@ -1,0 +1,33 @@
+{
+  "_from": "git+https://github.com/gitstc/app-info-plugin.git",
+  "_id": "com.hammoudehgrain.app-info-plugin@0.4.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/com.hammoudehgrain.app-info-plugin",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "git+https://github.com/gitstc/app-info-plugin.git",
+    "rawSpec": "git+https://github.com/gitstc/app-info-plugin.git",
+    "saveSpec": "git+https://github.com/gitstc/app-info-plugin.git",
+    "fetchSpec": "https://github.com/gitstc/app-info-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/gitstc/app-info-plugin.git#f34c49ed59e4922ff0a3740795bc933a9c99e180",
+  "_spec": "git+https://github.com/gitstc/app-info-plugin.git",
+  "_where": "E:\\Projects\\Cordova\\pharmacy",
+  "bundleDependencies": false,
+  "cordova": {
+    "platforms": [
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "license": "Apache-2.0",
+  "name": "com.hammoudehgrain.app-info-plugin",
+  "version": "0.4.1"
+}

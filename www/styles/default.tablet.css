@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+    .km-view .header {
+        height: 80px;
+    }
+    .km-footer {
+        height: 80px;
+    }
+    .km-footer .km-tabstrip .km-button {
+        font-size: 1em;
+    }
+    .btnNavigation.backButton {
+        background-size: 30% auto;
+    }
+}

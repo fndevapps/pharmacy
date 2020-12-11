@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "355906485555",
+    "firebase_url": "https://nazzal-pharmacy.firebaseio.com",
+    "project_id": "nazzal-pharmacy",
+    "storage_bucket": "nazzal-pharmacy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:355906485555:android:483171682dababbbfd5246",
+        "android_client_info": {
+          "package_name": "com.fn.nazzal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "355906485555-iaosqbtmgjtg4na67v5sbn76knu38rvi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBltmL0gDzs7GlzjIJwKnl75JNn2KIpDFg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "355906485555-iaosqbtmgjtg4na67v5sbn76knu38rvi.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

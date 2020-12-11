@@ -1,0 +1,51 @@
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.hammoudehgrain.app-info-plugin"
+    version="0.4.1">
+
+    <name>AppInfoPlugin</name>
+
+    <engines>
+        <engine name="cordova" version=">=2.7.0" />
+    </engines>
+
+    <js-module src="www/AppInfoPlugin.js" name="AppInfoPlugin">
+        <clobbers target="window.plugins.AppInfoPlugin" />
+    </js-module>
+
+
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            
+            <feature name="AppInfoPlugin">
+                <param name="ios-package" value="AppInfoPlugin"/>
+                <param name="onload" value="true" />
+            </feature>
+            
+            <!--<plugin name="AppInfoPlugin" value="AppInfoPlugin" />-->
+        </config-file>
+
+        <header-file src="src/ios/AppInfoPlugin.h" />
+
+        <source-file src="src/ios/AppInfoPlugin.m"
+            compiler-flags="-fno-objc-arc" />
+
+    </platform>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            
+            <feature name="AppInfoPlugin" >
+                <param name="android-package" value="com.hammoudehgrain.AppInfoPlugin.AppInfoPlugin"/>
+            </feature>
+            
+            <!--<plugin name="AppInfoPlugin" value="com.hammoudehgrain.AppInfoPlugin.AppInfoPlugin" />-->
+        </config-file>
+        
+        <source-file src="src/android/AppInfoPlugin.java" 
+            target-dir="src/com/hammoudehgrain/AppInfoPlugin" />
+
+    </platform>
+</plugin>

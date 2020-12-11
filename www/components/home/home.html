@@ -1,0 +1,74 @@
+<!-- <div data-role="view" id="homeView" data-controller="homeView" data-layout="tabsLayout" data-init="homeView.onInit" -->
+<div data-role="view" id="homeView" data-controller="homeView" data-init="homeView.onInit"
+    data-show="homeView.onShow" data-hide="homeView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+				<a data-role="button" class="btnNavigation drawerButton" onclick="toggleMenu(event)"></a>
+			</div>
+            <span class="title"><translation value="menu.home"></translation></span>
+           <!-- <div class="buttonContainer">
+				<a data-role="button" class="btnNavigation searchButton" onclick="homeView.search.showSearch(event)"></a>
+			</div>-->
+            <div class="buttonContainer">
+                <!-- <a data-role="button" class="cartButton" onclick="homeView.viewCart(event)">
+                    <span class="cartCount"></span>
+                </a> -->
+            </div>
+        </div>
+        <div class="navbar search-header" style="display: none">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation closeButton" onclick="homeView.search.hideSearch(event)"></a>
+            </div>
+            <span class="title">
+                <div class="search-header">
+                    <div class="search-bar">
+                        <div class="search-icon"></div>
+                        <input type="text" class="search-input" placeholder="Search" onkeyup="homeView.search.onSearch(event)" />
+                        <div class="cancel-icon" onclick="homeView.search.cancelSearch(event)"></div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="header scrolling-tabs" data-role="scroller">
+        <div class="scrolling-tabs-container">
+            <ul id="categoriesList"></ul>
+        </div>
+    </div>
+    <!--<div class="header totalOfProductsMaster">
+     <div class="totalOfProducts flex">
+        <span</span>
+     </div>
+    </div>-->
+    <div class="content" style="position: relative;">
+        <div class="container">
+            <div class="banner"></div>
+            <div class="list-container" data-role="scroller">
+                <ul id="itemsList" class="grid-list fab-list"></ul>
+            </div>
+        </div>
+        <a class="btn fab cartButton" onclick="homeView.viewCart(event)">
+            <span class="cartCount"></span>
+        </a>
+    </div>
+</div>
+<script type="text/x-kendo-template" id="itemsListTemplate">
+    <div class="list-item #=addedToCart ? 'added-to-cart' : ''#" itemID="#=id#">
+       <div class="item-image" background-image="#=image#" alt-background-image="#=altImage#" onclick="homeView.viewItemDetails(event)"></div>
+       <div class="item-details">
+        <div class="item-name" onclick="homeView.viewItemDetails(event)">#=currentLanguage == 'ar' ? aName : name#</div>
+        <div class="item-price" onclick="homeView.viewItemDetails(event)">#=price# #=currentLanguage == 'ar' ? currency.aName : currency.eName#</div>
+       </div>
+       
+        <div class="item-actions">
+            <!--<div class="add-to-cart-button" onclick="homeView.addToCart(event)">ADD TO CART</div>
+            <div class="remove-from-cart-button" onclick="homeView.removeFromCart(event)">REMOVE ITEM</div>-->
+            <div class="item-count">
+                <div class="item-count-down" onclick="homeView.decreaseQty(event)"></div>
+                <div class="item-count-qty"><input type="tel" value="#=qty#" min="0" oninput="homeView.setQty(event)" onfocus="homeView.onQtyFocus(event)" onblur="homeView.onQtyBlur(event)" /></div>
+                <div class="item-count-up" onclick="homeView.increaseQty(event)"></div>
+            </div>
+        </div>
+    </div>
+</script>

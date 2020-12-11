@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport"
+            content="initial-scale=1, maximum-scale=1, width=device-width, height=device-height, viewport-fit=cover">
+        <link rel="stylesheet" type="text/css" href="./libs/kendo/styles/kendo.mobile.all.min.css">
+        <script src="./libs/kendo/js/jquery.min.js"></script>
+        <script src="./libs/kendo/js/kendo.dataviz.mobile.min.js"></script>
+        <link href="styles/default.css" rel="stylesheet">
+        <link href="styles/default.tablet.css" rel="stylesheet">
+        <link href="styles/style.css" rel="stylesheet">
+        <link href="styles/style.tablet.css" rel="stylesheet">
+    </head>
+    <body style="visibility: hidden;">
+        <div id="notification-bar">
+            <div class="notIcon"></div>
+            <div class="notDetails">
+                <div class="notTop">
+                    <span class="notTitle">eCommerce</span>
+                    <span class="notTime">now</span>
+                </div>
+                <div class="notMessage"></div>
+            </div>
+        </div>
+        <div id="drawer" class="drawer">
+            <div class="header">
+                <div class="userInfo flex">
+                    <div class="name flex"></div>
+                </div>
+                <div class="editBtn flex">
+                </div>
+                <br/>
+            </div>
+            <div class="content">
+                <ul data-role="listview" id="sideMenuList" class="static">
+                    <li onclick="navigateNativeWithHighlight(event,'components/home/home.html', 'none', '#homeView');"
+                        class="active" view="#homeView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/home.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.home"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                    <li onclick="navigateNativeWithHighlight(event,'components/myOrders/myOrders.html', 'none', '#myOrdersView');"
+                        view="#myOrdersView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/cart.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.myOrders"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                    <li onclick="navigateNativeWithHighlight(event,'components/notifications/notifications.html', 'none', '#notificationsView');"
+                        view="#notificationsView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/notifications.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.notifications"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                    <li onclick="navigateNativeWithHighlight(event,'components/profile/profile.html', 'none', '#profileView');"
+                        view="#profileView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/profile.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.profile"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                   
+                     <li onclick="navigateNativeWithHighlight(event,'components/aboutUs/aboutUs.html', 'none', '#aboutUsView');"
+                        view="#aboutUsView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/info.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.aboutUs"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div class="switchContentContainer">
+                    <div class="availableRequestContainer">
+                        <div class="hold flex center">
+                            <span>
+                                <translation value="menu.english"></translation>
+                            </span>
+                        </div>
+                        <div class="switchConatiner">
+                            <input class="switch" id="switch" />
+                        </div>
+                        <div class="available flex center">
+                            <span>
+                                <translation value="menu.arabic"></translation>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <ul data-role="listview" style="margin-top: 0px">
+                    <li onclick="logoutUser(event)">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/logout.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.logout"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                </ul>
+                <div class="drawerFooterContent">
+                    <!--<div class="devlopedBy flex "><span><translation value="menu.developedByTSU"></span></div>-->
+                    <div class="version flex " onclick="goToTSUWebsite(event)"><span></span></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="ar_drawer" class="drawer">
+            <div class="header">
+                <div class="userInfo flex">
+                    <div class="name flex"></div>
+                </div>
+                <div class="editBtn flex">
+                    
+                </div>
+                <br/>
+            </div>
+            <div class="content">
+                <ul data-role="listview" id="sideMenuList" class="static">
+                    <li onclick="navigateNativeWithHighlight(event,'components/home/home.html', 'none', '#homeView');"
+                        class="active" view="#homeView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/home.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.home"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                    <li onclick="navigateNativeWithHighlight(event,'components/myOrders/myOrders.html', 'none', '#myOrdersView');"
+                        view="#myOrdersView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/cart.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.myOrders"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                    <li onclick="navigateNativeWithHighlight(event,'components/notifications/notifications.html', 'none', '#notificationsView');"
+                        view="#notificationsView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/notifications.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.notifications"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                    <li onclick="navigateNativeWithHighlight(event,'components/profile/profile.html', 'none', '#profileView');"
+                        view="#profileView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/profile.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.profile"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                   
+                    <li onclick="navigateNativeWithHighlight(event,'components/aboutUs/aboutUs.html', 'none', '#aboutUsView');"
+                        view="#aboutUsView">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/info.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.aboutUs"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer">
+                <div class="switchContentContainer">
+                    <div class="availableRequestContainer">
+                        <div class="hold flex center">
+                            <span>
+                                <translation value="menu.english"></translation>
+                            </span>
+                        </div>
+                        <div class="switchConatiner">
+                            <input class="switch" id="ar_switch" />
+                        </div>
+                        <div class="available flex center">
+                            <span>
+                                <translation value="menu.arabic"></translation>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <ul data-role="listview" style="margin-top: 0px">
+                    <li onclick="logoutUser(event)">
+                        <div class="icons">
+                            <div class="icon" style="-webkit-mask-image:url(images/icons/custom/logout.png)"></div>
+                        </div>
+                        <div class="details flex">
+                            <span>
+                                <translation value="menu.logout"></translation>
+                            </span>
+                        </div>
+                        <div class="arrow">
+                            <!--<div class="icon"></div>-->
+                        </div>
+                    </li>
+                </ul>
+                <div class="drawerFooterContent">
+                    <!--<div class="devlopedBy flex left" style="direction:ltr;"><span><translation value="menu.developedByTSU"></span></div>-->
+                    <div class="version flex " onclick="goToTSUWebsite(event)"><span></span></div>
+                </div>
+            </div>
+        </div>
+        <div id="modal_photoViewer" data-role="modalview" style="width:100%;height:100%">
+            <div class="header">
+                <div class="navbar">
+                    <div class="buttonContainer">
+                        <a data-role="button" class="btnNavigation closeButton"
+                            onclick="Modals.PhotoViewerModal._onModalClosed(event)"></a>
+                    </div>
+                    <span class="title center"></span>
+                </div>
+            </div>
+            <div class="content">
+                <!-- Root element of PhotoSwipe. Must have class pswp. -->
+                <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+                    <!-- Background of PhotoSwipe.
+                 It's a separate element, as animating opacity is faster than rgba(). -->
+                    <div class="pswp__bg"></div>
+                    <!-- Slides wrapper with overflow:hidden. -->
+                    <div class="pswp__scroll-wrap">
+                        <!-- Container that holds slides. PhotoSwipe keeps only 3 slides in DOM to save memory. -->
+                        <div class="pswp__container">
+                            <!-- don't modify these 3 pswp__item elements, data is added later on -->
+                            <div class="pswp__item"></div>
+                            <div class="pswp__item"></div>
+                            <div class="pswp__item"></div>
+                        </div>
+                        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                        <div class="pswp__ui pswp__ui--hidden">
+                            <div class="pswp__top-bar">
+                                <!--  Controls are self-explanatory. Order can be changed. -->
+                                <div class="pswp__counter"></div>
+                                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                                <button class="pswp__button pswp__button--share" title="Share"></button>
+                                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                                <!-- element will get class pswp__preloader--active when preloader is running -->
+                                <div class="pswp__preloader">
+                                    <div class="pswp__preloader__icn">
+                                        <div class="pswp__preloader__cut">
+                                            <div class="pswp__preloader__donut"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                                <div class="pswp__share-tooltip"></div>
+                            </div>
+                            <button class="pswp__button pswp__button--arrow--left"
+                                title="Previous (arrow left)"></button>
+                            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                            <div class="pswp__caption">
+                                <div class="pswp__caption__center"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal_updateLocation" data-role="modalview" style="width:100%;height:100%">
+            <div class="header">
+                <div class="navbar">
+                    <div class="buttonContainer">
+                        <a data-role="button" class="btnNavigation closeButton"
+                            onclick="Modals.UpdateLocationModal._onModalClosed(event)"></a>
+                    </div>
+                    <span class="title center update">
+                        <translation value="address.updateAddress"></translation>
+                    </span>
+                    <span class="title center add">
+                        <translation value="address.addNew"></translation>
+                    </span>
+                </div>
+            </div>
+            <div class="content">
+                <div class="address-form">
+                    <div class="form" style="opacity: 0;">
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.name"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtName" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.country"></translation>
+                                </span>
+                            </div>
+                            <select class="form-control input" id="selCountryID"></select>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.city"></translation>
+                                </span>
+                            </div>
+                            <select class="form-control input" id="selCityID"></select>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.area"></translation>
+                                </span>
+                            </div>
+                            <select class="form-control input" id="selAreaID"></select>
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.road"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtRoadName" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.buildingNumber"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtBuildingNumber" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.apartmentNumber"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtApartmentNumber" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.floor"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtFloor" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.landmark"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtLandmark" />
+                        </div>
+                        <div class="form-group">
+                            <div class="control-label">
+                                <span>
+                                    <translation value="address.deliveryInstructions"></translation>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control input" id="txtDeliveryInstructions" />
+                        </div>
+                        <div class="form-group">
+                            <div class="btn" id="btnUpdateAddress"
+                                onclick="Modals.UpdateLocationModal.saveChanges(event)">
+                                <div class="btnText flex center">
+                                    <translation value="general.save"></translation>
+                                </div>
+                            </div>
+                        </div>
+                        <br/>
+                        <br/>
+                        <br/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="modal_selectLocation" data-role="modalview" style="width:100%;height:100%">
+            <div class="header">
+                <div class="navbar">
+                    <div class="buttonContainer">
+                        <a data-role="button" class="btnNavigation closeButton"
+                            onclick="Modals.SelectLocationModal._onModalClosed(event)"></a>
+                    </div>
+                    <span class="title center">
+                        <translation value="address.selectAddress"></translation>
+                    </span>
+                </div>
+            </div>
+            <div class="content">
+                <ul id="modal_addressesList"></ul>
+            </div>
+            <script id="modal_addressesTemplate" type="text/x-kendo-template">
+                <div class="list-item-container" onclick="Modals.SelectLocationModal.onLocationSelected(event, '#=uid#')">
+                    <div class="title">
+                        <b>#=name#</b>
+                    </div>
+                    <div class="subtitle">
+                        #=area.name#, Building #=buildingNumber#, Apartment #=apartmentNumber#, Floor #=floor#
+                    </div>
+                </div>
+            </script>
+        </div>
+        <div id="modal_alert" data-role="modalview" style="width:80%;max-width:400px">
+            <div class="content">
+                <div class="icon"></div>
+                <div class="title"></div>
+                <div class="message"></div>
+                <div class="actions">
+                    <div class="action action-ok" onclick="Modals.AlertModal._onOkClicked(event);"></div>
+                </div>
+            </div>
+        </div>
+        <div data-role="layout" data-id="tabsLayout">
+            <div data-role="footer">
+                <div class="tabs" data-role="tabstrip">
+                    <a class="home" onclick="onTabNavigate(event,'home' )" data-icon="tsuHome">
+                        <translation value="menu.home"></translation>
+                    </a>
+                    <a class="search" onclick="onTabNavigate(event, 'explore')" data-icon="tsuSearch">
+                        <translation value="menu.explore"></translation>
+                    </a>
+                    <a class="more" data-icon="tsuMore" onclick="openMoreMenu(event)">
+                        <translation value="menu.more"></translation>
+                    </a>
+                </div>
+            </div>
+            <div data-role="popover" id="popover" data-popup='{"width": "9em"}'>
+                <div data-role="view">
+                    <ul data-role="listview" style="font-size:14px;">
+                        <li onclick="loginView.logout(event)" data-icon="tsuLogout">
+                            <translation value="menu.logout"></translation>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+
+        <!-- Libraries/Utilities -->
+        <script src="libs/fastClick.js"></script>
+        <script src="libs/moment.js"></script>
+        <script src="libs/jquery.dotdotdot.min.js"></script>
+        <script src="libs/versionCompare.js"></script>
+
+        <link rel="stylesheet" href="libs/photo-swipe/photoswipe.css" />
+        <link rel="stylesheet" href="libs/photo-swipe/default-skin/default-skin.css" />
+        <style>
+            .pswp__top-bar .pswp__button {
+                display: none !important;
+            }
+        </style>
+        <script src="libs/photo-swipe/photoswipe.min.js"></script>
+        <script src="libs/photo-swipe/photoswipe-ui-default.min.js"></script>
+
+        <link rel="stylesheet" href="libs/slick-carousel/slick.css">
+        <script src="libs/slick-carousel/slick.js"></script>
+
+        <script src="scripts/TranslationManager.js"></script>
+        <script src="scripts/DelegateManager.js"></script>
+        <script src="scripts/KeyboardFix.js"></script>
+        <script src="scripts/Utils.js"></script>
+        <script src="scripts/config.js"></script>
+        <script src="scripts/Data.js"></script>
+        <script src="scripts/DB.js"></script>
+        <script src="scripts/GoogleMaps.js"></script>
+        <script src="scripts/SupportSockets.js"></script>
+        <script src="scripts/MyCart.js"></script>
+        <script src="scripts/Banner.js"></script>
+        <script src="scripts/Modals.js"></script>
+        <script src="scripts/SchemaUpdater.js"></script>
+        <script src="scripts/schema.js"></script>
+        <script src="scripts/PushNotifications.js"></script>
+        <script src="scripts/Promotions.js"></script>
+
+        <!-- Components -->
+        <script type="text/javascript" src="components/login/login.js"></script>
+        <script type="text/javascript" src="components/signUp/signUp.js"></script>
+        <script type="text/javascript" src="components/login/verify.js"></script>
+        <script type="text/javascript" src="components/login/fillInfo.js"></script>
+        <script type="text/javascript" src="components/login/fillAddress.js"></script>
+        <script type="text/javascript" src="components/register/register.js"></script>
+        <script type="text/javascript" src="components/forgotPassword/forgotPassword.js"></script>
+        <script type="text/javascript" src="components/profile/profile.js"></script>
+        <script type="text/javascript" src="components/changePin/changePin.js"></script>
+        <script type="text/javascript" src="components/home/home.js"></script>
+        <script type="text/javascript" src="components/itemDetails/itemDetails.js"></script>
+        <script type="text/javascript" src="components/cart/cart.js"></script>
+        <script type="text/javascript" src="components/checkout/checkout.js"></script>
+        <script type="text/javascript" src="components/myOrders/myOrders.js"></script>
+        <script type="text/javascript" src="components/myOrders/orderDetails.js"></script>
+        <script type="text/javascript" src="components/aboutUs/aboutUs.js"></script>
+        <script type="text/javascript" src="components/pending/pending.js"></script>
+        <script type="text/javascript" src="components/notifications/notifications.js"></script>
+        <script type="text/javascript" src="components/notifications/notificationDetails.js"></script>
+
+        <!-- Main App -->
+        <script type="text/javascript" src="scripts/app.js"></script>
+    </body>
+</html>

@@ -1,0 +1,67 @@
+<!-- <div data-role="view" id="myOrdersView" data-controller="myOrdersView" data-layout="tabsLayout" data-init="myOrdersView.onInit" -->
+    <div data-role="view" id="myOrdersView" data-controller="myOrdersView" data-init="myOrdersView.onInit"
+    data-show="myOrdersView.onShow" data-hide="myOrdersView.onHide">
+    <div class="header">
+        <div class="navbar">
+            <div class="buttonContainer">
+				<a data-role="button" class="btnNavigation drawerButton" onclick="toggleMenu(event)"></a>
+			</div>
+            <span class="title"><translation value="menu.myOrders"></translation></span>
+            <div class="buttonContainer">
+				<a data-role="button" class="btnNavigation searchButton" onclick="myOrdersView.search.showSearch(event)"></a>
+			</div>
+            <div class="buttonContainer">
+                <!-- <a data-role="button" class="cartButton" onclick="myOrdersView.viewCart(event)">
+                    <span class="cartCount"></span>
+                </a> -->
+            </div>
+        </div>
+        <div class="navbar search-header" style="display: none">
+            <div class="buttonContainer">
+                <a data-role="button" class="btnNavigation closeButton" onclick="myOrdersView.search.hideSearch(event)"></a>
+            </div>
+            <span class="title">
+                <div class="search-header">
+                    <div class="search-bar">
+                        <div class="search-icon"></div>
+                        <input type="text" class="search-input" placeholder="Search" onkeyup="myOrdersView.search.onSearch(event)" />
+                        <div class="cancel-icon" onclick="myOrdersView.search.cancelSearch(event)"></div>
+                    </div>
+                </div>
+            </span>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="list-container" data-role="scroller">
+                <ul id="ordersList" class="fab-list"></ul>
+            </div>
+        </div>
+        <a class="btn fab cartButton" onclick="myOrdersView.viewCart(event)">
+            <span class="cartCount"></span>
+        </a>
+    </div>
+</div>
+<script type="text/x-kendo-template" id="ordersListTemplate">
+    <div class="list-item" onclick="myOrdersView.viewOrderDetails(event, '#=uid#')">
+        <!-- <div class="order-icon">
+
+        </div> -->
+        <div class="order-info-main">
+            <div class="order-code"><b>#= TranslationManager.translate('orders.orderNo') # \##= orderNo #</b></div>
+            <div class="order-date">#= orderDateTimeFormatted #</div>
+            <div class="order-address"><small>#= TranslationManager.translate('orders.orderAddress') #:</small> #= customerLocationName #</div>
+        </div>
+        <div class="order-info-sub">
+            <div class="order-status">
+                #=currentLanguage == 'ar' ? orderStatus.aName : orderStatus.eName#
+            </div>
+            <div class="order-price">
+                #= totalString #
+            </div>
+            <div class="order-item-count">
+                #= noOfItems #&nbsp;#= TranslationManager.translate('general.items') #
+            </div>
+        </div>
+    </div>
+</script>

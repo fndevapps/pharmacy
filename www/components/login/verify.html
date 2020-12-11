@@ -1,0 +1,42 @@
+<div data-role="view" id="verifyView" data-controller="verifyView" data-init="verifyView.onInit"
+    data-show="verifyView.onShow" data-before-hide="verifyView.onHide">
+    <div class="content">
+        <div class="container">
+            <div class="logo">
+                <div class="sublogo"></div>
+            </div>
+            <div class="login-form">
+                <div class="instructions-container">
+                    <div class="avatar"></div>
+                    <div class="title">
+                        <translation value="verify.verify"></translation>
+                    </div>
+                    <div class="instructions">
+                        <translation value="verify.verificationInstructions"></translation>
+                    </div>
+                </div>
+                <div class="form">
+                    <div class="form-group">
+                        <div class="control-label">
+                            <span>
+                                <translation value="verify.pin"></translation>
+                            </span>
+                        </div>
+                        <input type="tel" class="form-control input" id="txtPIN" />
+                    </div>
+                </div>
+            </div>
+            <div class="actions-container">
+                <div class="action" onclick="verifyView.resendPinCode(event)">
+                    <translation value="verify.resend"></translation>
+                </div>
+                <div class="action" onclick="verifyView.back(event)">
+                    <translation value="verify.changeMobile"></translation>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer action" id="btnLogin" onclick="verifyView.verifyPinCode(event)">
+        <translation value="verify.verifyPIN"></translation>
+    </div>
+</div>

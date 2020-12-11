@@ -1,0 +1,37 @@
+@import "./theme.scss";
+
+@media (min-width: 768px) {
+    .form {
+        width: 60%;
+    }
+
+    .logo {
+        height: 150px;
+    }
+
+    #homeView .grid-list li {
+        width: 29.3%;
+    }
+
+    #myCardsView .header.btnGroupMainContainer .btnGroupContainer .btnGroup {
+        height: 60px;
+    }
+
+    #cartView #itemsList li {
+        height: 120px;
+
+        .list-item.slide {
+            -webkit-transform: translate3d(-120px, 0px, 0px);
+            transform: translate3d(-120px, 0px, 0px);
+        }
+
+        .list-item .item-image {
+            width: 100px;
+            height: 100px;
+        }
+    }
+
+    #cartView #itemsList li .list-item-actions .item-actions .remove-from-cart-button {
+        width: 120px;
+    }
+}

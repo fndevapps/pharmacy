@@ -1,0 +1,40 @@
+{
+  "_from": "git+https://github.com/gitstc/activity-indicator-plugin.git",
+  "_id": "cordova-plugin-activity-indicator@0.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/cordova-plugin-activity-indicator",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "https://github.com/gitstc/activity-indicator-plugin.git",
+    "rawSpec": "https://github.com/gitstc/activity-indicator-plugin.git",
+    "saveSpec": "git+https://github.com/gitstc/activity-indicator-plugin.git",
+    "fetchSpec": "https://github.com/gitstc/activity-indicator-plugin.git",
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "git+https://github.com/gitstc/activity-indicator-plugin.git#5ec2346a8969a94c9a5065a34023b67b1bc21a5c",
+  "_spec": "https://github.com/gitstc/activity-indicator-plugin.git",
+  "_where": "E:\\Projects\\Cordova\\pharmacy",
+  "author": "",
+  "bundleDependencies": false,
+  "cordova": {
+    "id": "cordova-plugin-activity-indicator",
+    "platforms": [
+      "ios",
+      "android"
+    ]
+  },
+  "deprecated": false,
+  "description": "ActivityIndicator",
+  "keywords": [
+    "cordova-plugin-activity-indicator"
+  ],
+  "license": "Apache 2.0",
+  "name": "cordova-plugin-activity-indicator",
+  "version": "0.0.1"
+}
